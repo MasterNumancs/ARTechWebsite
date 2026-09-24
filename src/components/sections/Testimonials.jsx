@@ -1,27 +1,22 @@
-const testimonials = [
-  { img: '/img/testimonial-1.jpg' },
-  { img: '/img/testimonial-2.jpg' },
-  { img: '/img/testimonial-3.jpg' },
-]
+import { clients, site } from '../../data/site'
 
 export default function Testimonials() {
   return (
-    <div className="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div className="container-xxl py-5">
       <div className="container">
-        <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <div className="text-center">
           <div className="bg-primary mb-3 mx-auto" style={{ width: 60, height: 2 }}></div>
-          <h1 className="display-5 mb-5">Testimonial</h1>
+          <h1 className="display-5 mb-3">Our Clients</h1>
+          <p className="mb-5">
+            Brands that already trust {site.name} for CCTV, networking, and on-site support.
+          </p>
         </div>
-        <div className="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-          {testimonials.map((item) => (
-            <div
-              key={item.img}
-              className="testimonial-item text-center"
-              data-dot={`<img class='img-fluid' src='${item.img}' alt=''>`}
-            >
-              <p className="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-              <h4>Client Name</h4>
-              <span className="text-primary">Profession</span>
+        <div className="row g-4 justify-content-center">
+          {clients.map((client) => (
+            <div key={client.name} className="col-6 col-md-3">
+              <div className="client-logo h-100 d-flex align-items-center justify-content-center p-3">
+                <img src={client.logo} alt={client.name} />
+              </div>
             </div>
           ))}
         </div>

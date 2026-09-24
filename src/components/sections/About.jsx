@@ -37,11 +37,11 @@ export default function About() {
                 <div className="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
                   <div className="d-flex align-items-center">
                     <div className="btn-square bg-white rounded-circle" style={{ width: 64, height: 64 }}>
-                      <i className="fa fa-check fa-lg text-primary" aria-hidden="true"></i>
+                      <i className="fa fa-user-tie fa-lg text-primary" aria-hidden="true"></i>
                     </div>
                     <div className="ms-4">
-                      <h5 className="mb-1">Sale to Support</h5>
-                      <p className="fw-medium text-primary mb-0">Full lifecycle</p>
+                      <h5 className="mb-1">{site.director.name}</h5>
+                      <p className="fw-medium text-primary mb-0">{site.director.title}</p>
                     </div>
                   </div>
                 </div>

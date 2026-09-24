@@ -6,6 +6,17 @@
     --dark: #071428;
 }
 
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+}
+
+body {
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
 .fw-medium {
     font-weight: 500 !important;
 }
@@ -21,7 +32,8 @@
 .back-to-top {
     position: fixed;
     display: none;
-    right: 45px;
+    left: 45px;
+    right: auto;
     bottom: 45px;
     z-index: 99;
 }
@@ -110,13 +122,141 @@
 }
 
 @media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link  {
-        margin-right: 0;
-        padding: 10px 0;
+    html.nav-drawer-open,
+    body.nav-drawer-open {
+        overflow: hidden !important;
+        overscroll-behavior: none;
+    }
+
+    body.nav-drawer-open .navbar.sticky-top {
+        position: fixed;
+        top: 0 !important;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .navbar {
+        z-index: 1060;
+        background: #fff;
+    }
+
+    .navbar-toggler {
+        border: 0;
+        box-shadow: none;
+        padding: 8px;
+        position: relative;
+        z-index: 1062;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+    .navbar-toggler .navbar-toggler-icon {
+        background-image: none;
+        position: relative;
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #071428;
+        transition: background .2s ease;
+    }
+
+    .navbar-toggler .navbar-toggler-icon::before,
+    .navbar-toggler .navbar-toggler-icon::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 22px;
+        height: 2px;
+        background: #071428;
+        transition: transform .2s ease, top .2s ease;
+    }
+
+    .navbar-toggler .navbar-toggler-icon::before {
+        top: -7px;
+    }
+
+    .navbar-toggler .navbar-toggler-icon::after {
+        top: 7px;
+    }
+
+    .navbar-toggler.is-open .navbar-toggler-icon {
+        background: transparent;
+    }
+
+    .navbar-toggler.is-open .navbar-toggler-icon::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .navbar-toggler.is-open .navbar-toggler-icon::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    .navbar-drawer-backdrop {
+        position: fixed;
+        top: 75px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(7, 20, 40, .4);
+        z-index: 1040;
+    }
+
+    .navbar-collapse {
+        position: fixed;
+        top: 75px;
+        right: 0;
+        bottom: auto;
+        left: auto;
+        width: min(200px, 58vw);
+        height: calc(100vh - 75px);
+        max-height: calc(100vh - 75px);
+        margin: 0;
+        padding: 0.85rem 0.9rem 1rem;
+        background: #fff;
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateX(100%);
+        transition: transform .35s ease, visibility 0s linear .35s;
+        z-index: 1050;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .navbar-collapse.is-open {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+        transition: transform .35s ease, visibility 0s linear 0s;
+        box-shadow: -16px 0 40px rgba(7, 20, 40, .16);
     }
 
     .navbar .navbar-nav {
-        border-top: 1px solid #EEEEEE;
+        border-top: 0;
+        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .navbar .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 8px 4px;
+        font-size: 14px;
+        line-height: 1.3;
+        font-weight: 500;
+        text-align: left;
+        width: 100%;
     }
 }
 
@@ -514,6 +654,21 @@
     opacity: 1;
 }
 
+.client-logo {
+    background: #fff;
+    border: 1px solid rgba(7, 20, 40, .08);
+    box-shadow: 0 0 45px rgba(0, 0, 0, .06);
+    height: 160px;
+}
+
+.client-logo img {
+    width: 132px;
+    height: 132px;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
 
 /*** Contact ***/
 @media (min-width: 992px) {
@@ -639,6 +794,11 @@
     width: auto;
     max-width: 210px;
     object-fit: contain;
+    background: transparent;
+}
+
+.navbar-brand {
+    background: transparent;
 }
 
 .team-monogram {
@@ -660,6 +820,19 @@
 
 .contact-panel a {
     color: #fff;
+}
+
+.office-map {
+    width: 100%;
+    height: 360px;
+    background: #e9eef5;
+}
+
+.office-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
 }
 
 .quote-visual,
@@ -778,13 +951,14 @@
 /*** Live chat ***/
 .live-chat {
     position: fixed;
-    right: 24px;
-    bottom: 108px;
+    right: 45px;
+    bottom: 45px;
     z-index: 1040;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 12px;
+    max-width: calc(100vw - 24px);
 }
 
 .live-chat-toggle {

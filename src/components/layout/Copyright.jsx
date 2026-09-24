@@ -9,7 +9,7 @@ export default function Copyright() {
             &copy; {new Date().getFullYear()} <span className="border-bottom">{site.name}</span>, All Rights Reserved.
           </div>
           <div className="col-md-6 text-center text-md-end">
-            {site.ceo.title} | {site.ceo.name}
+            {site.ceo.title} | {site.ceo.name} · {site.director.title} | {site.director.name}
           </div>
         </div>
       </div>

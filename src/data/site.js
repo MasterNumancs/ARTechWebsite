@@ -3,8 +3,12 @@ export const site = {
   shortName: 'AR Tech',
   tagline: 'CCTV, networking, IP exchange, and computers — sold, installed, and supported.',
   ceo: {
-    name: 'Awais Rajput',
+    name: 'Muhammad Awais',
     title: 'CEO',
+  },
+  director: {
+    name: 'Umair Talib',
+    title: 'Director',
   },
   phone: '+923184018083',
   phoneDisplay: '+92 318 4018083',
@@ -71,6 +75,28 @@ export const facts = [
     text: 'Laptops, desktops, and after-sales care so your workstations stay productive.',
   },
 ]
+
+export const office = {
+  address: 'Mian Plaza, Civic Centre Block D 2, Phase 1 Johar Town, Lahore, 54782',
+  mapsUrl: 'https://maps.app.goo.gl/9hUPPrNQnSGYmUSN7',
+  embedUrl:
+    'https://maps.google.com/maps?q=AR+Tech+Solution,+Mian+Plaza,+Civic+Centre+Block+D+2,+Phase+1+Johar+Town,+Lahore&z=16&output=embed',
+}
+
+export const clients = [
+  { name: 'Sitara Fabrics', logo: '/img/clients/sitara-fabrics.jpg' },
+  { name: 'English Shoes', logo: '/img/clients/english-shoes.jpg' },
+  { name: 'Stylo', logo: '/img/clients/stylo.jpg' },
+  { name: 'A Alpha Group', logo: '/img/clients/alpha-group.jpg' },
+]
+
+export const leadership = [site.ceo, site.director]
+
+export function personLine(person) {
+  return `${person.title} | ${person.name}`
+}
+
+export const leadershipLine = leadership.map(personLine).join('  ·  ')
 
 export function buildWhatsAppUrl(message) {
   const params = new URLSearchParams({ text: message })

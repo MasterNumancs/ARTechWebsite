@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { buildWhatsAppUrl, mailHref, site, telHref, whatsappHref } from '../../data/site'
+import { buildWhatsAppUrl, mailHref, office, site, telHref, whatsappHref } from '../../data/site'
 
 const emptyForm = {
   name: '',
@@ -11,6 +11,7 @@ const emptyForm = {
 export default function Contact() {
   const [form, setForm] = useState(emptyForm)
   const [error, setError] = useState('')
+  const [shareNote, setShareNote] = useState('')
 
   function updateField(event) {
     const { name, value } = event.target
@@ -36,6 +37,31 @@ export default function Contact() {
       .join('\n')
 
     window.open(buildWhatsAppUrl(text), '_blank', 'noopener,noreferrer')
+  }
+
+  async function shareLocation() {
+    const shareData = {
+      title: site.name,
+      text: `${site.name}, ${office.address}`,
+      url: office.mapsUrl,
+    }
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData)
+        setShareNote('')
+        return
+      } catch (err) {
+        if (err && err.name === 'AbortError') return
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(office.mapsUrl)
+      setShareNote('Location link copied.')
+    } catch {
+      setShareNote(office.mapsUrl)
+    }
   }
 
   return (
@@ -94,6 +120,10 @@ export default function Contact() {
                   {site.ceo.title} | {site.ceo.name}
                 </p>
                 <p className="mb-3">
+                  <i className="fa fa-user-tie me-3"></i>
+                  {site.director.title} | {site.director.name}
+                </p>
+                <p className="mb-3">
                   <i className="fa fa-phone-alt me-3"></i>
                   <a href={telHref}>{site.phoneDisplay}</a>
                 </p>
@@ -101,13 +131,36 @@ export default function Contact() {
                   <i className="fa fa-envelope me-3"></i>
                   <a href={mailHref}>{site.email}</a>
                 </p>
-                <p className="mb-0">
+                <p className="mb-3">
                   <i className="fab fa-whatsapp me-3"></i>
                   <a href={whatsappHref} target="_blank" rel="noreferrer">Chat on WhatsApp</a>
                 </p>
+                <p className="mb-4">
+                  <i className="fa fa-map-marker-alt me-3"></i>
+                  {office.address}
+                </p>
+                <div className="d-flex flex-wrap gap-2">
+                  <a className="btn btn-light rounded-pill py-2 px-4" href={office.mapsUrl} target="_blank" rel="noreferrer">
+                    <i className="fa fa-location-arrow me-2"></i>
+                    Open in Maps
+                  </a>
+                  <button className="btn btn-outline-light rounded-pill py-2 px-4" type="button" onClick={shareLocation}>
+                    <i className="fa fa-share-alt me-2"></i>
+                    Share Location
+                  </button>
+                </div>
+                {shareNote ? <p className="mt-3 mb-0">{shareNote}</p> : null}
               </div>
             </div>
           </div>
+        </div>
+        <div className="office-map mt-0">
+          <iframe
+            title={`${site.name} office location`}
+            src={office.embedUrl}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </div>
