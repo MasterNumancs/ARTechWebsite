@@ -8,7 +8,7 @@ export default function ServicePage() {
 
   return (
     <>
-      <PageHeader title="Services" current="Services" />
+      <PageHeader title="Services" current="Services" branded />
       <Services />
       <Testimonials />
     </>

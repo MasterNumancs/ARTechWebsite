@@ -24,7 +24,7 @@ export default function HeroCarousel() {
             </div>
             <div className="col-lg-6">
               <div className="hero-visual">
-                <img src="/img/hero-products.jpg" alt={`${site.name} CCTV, networking, IP phones, and computers`} />
+                <img src="/img/hero-first.jpg" alt={`${site.name} CCTV cameras, recorder, network gear, and live view`} />
               </div>
             </div>
           </div>

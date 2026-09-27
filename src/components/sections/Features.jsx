@@ -37,9 +37,9 @@ export default function Features({ spaced = true }) {
             <div className="position-relative h-100 feature-visual">
               <img
                 className="position-absolute img-fluid w-100 h-100"
-                src="/img/product-cctv.jpg"
+                src="/img/why-choose-us.jpg"
                 style={{ objectFit: 'cover' }}
-                alt="CCTV cameras and NVR from AR Tech Solution"
+                alt="AR Tech Solution team reviewing security plans"
               />
             </div>
           </div>

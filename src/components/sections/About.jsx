@@ -10,9 +10,9 @@ export default function About() {
             <div className="position-relative h-100 about-visual">
               <img
                 className="position-absolute img-fluid w-100 h-100"
-                src="/img/hero-products.jpg"
+                src="/img/about-us.jpg"
                 style={{ objectFit: 'cover' }}
-                alt={`${site.name} product range`}
+                alt={`${site.name} team in a planning meeting`}
               />
             </div>
           </div>

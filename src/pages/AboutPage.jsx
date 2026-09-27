@@ -9,7 +9,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <PageHeader title="About Us" current="About" />
+      <PageHeader title="About Us" current="About" branded />
       <Facts />
       <About />
       <Team />

@@ -52,9 +52,9 @@ export default function Quote({ spaced = true }) {
             <div className="position-relative h-100 quote-visual">
               <img
                 className="position-absolute img-fluid w-100 h-100"
-                src="/img/product-desktop.jpg"
+                src="/img/free-quote.jpg"
                 style={{ objectFit: 'cover' }}
-                alt="Business computers available from AR Tech Solution"
+                alt="Free quote form on a laptop at AR Tech Solution"
               />
             </div>
           </div>

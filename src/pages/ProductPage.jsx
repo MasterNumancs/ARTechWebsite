@@ -7,7 +7,7 @@ export default function ProductPage() {
 
   return (
     <>
-      <PageHeader title="Products" current="Products" />
+      <PageHeader title="Products" current="Products" branded />
       <Products />
     </>
   )

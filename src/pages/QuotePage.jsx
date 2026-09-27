@@ -7,7 +7,7 @@ export default function QuotePage() {
 
   return (
     <>
-      <PageHeader title="Free Quote" current="Free Quote" />
+      <PageHeader title="Free Quote" current="Free Quote" branded />
       <Quote spaced={false} />
     </>
   )
