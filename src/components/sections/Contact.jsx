@@ -140,7 +140,7 @@ export default function Contact() {
                   {office.address}
                 </p>
                 <div className="d-flex flex-wrap gap-2">
-                  <a className="btn btn-light rounded-pill py-2 px-4" href={office.mapsUrl} target="_blank" rel="noreferrer">
+                  <a className="btn btn-maps rounded-pill py-2 px-4" href={office.mapsUrl} target="_blank" rel="noreferrer">
                     <i className="fa fa-location-arrow me-2"></i>
                     Open in Maps
                   </a>

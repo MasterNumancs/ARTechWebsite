@@ -81,6 +81,8 @@ export const office = {
   mapsUrl: 'https://maps.app.goo.gl/9hUPPrNQnSGYmUSN7',
   embedUrl:
     'https://maps.google.com/maps?q=AR+Tech+Solution,+Mian+Plaza,+Civic+Centre+Block+D+2,+Phase+1+Johar+Town,+Lahore&z=16&output=embed',
+  areaEmbedUrl:
+    'https://maps.google.com/maps?q=Lahore,+Pakistan&z=11&output=embed',
 }
 
 export const clients = [

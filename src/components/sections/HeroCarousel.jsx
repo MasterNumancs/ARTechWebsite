@@ -18,7 +18,7 @@ export default function HeroCarousel() {
               <Link to="/quote" className="btn btn-primary rounded-pill py-md-3 px-md-5 me-3 animated slideInLeft">
                 Free Quote
               </Link>
-              <a href={whatsappHref} target="_blank" rel="noreferrer" className="btn btn-light rounded-pill py-md-3 px-md-5 animated slideInRight">
+              <a href={whatsappHref} target="_blank" rel="noreferrer" className="btn btn-light btn-whatsapp-us rounded-pill py-md-3 px-md-5 animated slideInRight">
                 WhatsApp Us
               </a>
             </div>

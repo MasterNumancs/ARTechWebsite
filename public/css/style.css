@@ -64,6 +64,13 @@ body {
     color: #FFFFFF;
 }
 
+.btn.btn-whatsapp-us:hover,
+.btn.btn-whatsapp-us:focus {
+    background: #25D366;
+    border-color: #1ebe5d;
+    color: #fff;
+}
+
 .btn-square {
     width: 38px;
     height: 38px;
@@ -282,6 +289,18 @@ body {
 .navbar .btn:hover {
     color: #FFFFFF !important;
     background: var(--primary) !important;
+}
+
+.navbar a.btn-nav-whatsapp,
+.navbar a.btn-nav-whatsapp:hover,
+.navbar a.btn-nav-whatsapp:focus,
+.navbar a.btn-nav-whatsapp:focus-visible,
+.navbar a.btn-nav-whatsapp:active,
+.navbar a.btn-nav-whatsapp:visited {
+    color: #FFFFFF !important;
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    box-shadow: none !important;
 }
 
 
@@ -825,6 +844,59 @@ body {
 
 .contact-panel a {
     color: #fff;
+}
+
+.contact-panel a.btn-maps {
+    background: #fff;
+    border-color: #fff;
+    color: #4285F4;
+}
+
+.contact-panel a.btn-maps:hover,
+.contact-panel a.btn-maps:focus {
+    background: #4285F4;
+    border-color: #4285F4;
+    color: #fff;
+}
+
+.service-area-card {
+    width: 100%;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .04);
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    overflow: hidden;
+}
+
+.service-area-copy {
+    padding: 2.5rem;
+}
+
+.service-area-copy h2,
+.service-area-copy h3 {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.service-area-copy h2 {
+    font-size: 1.75rem;
+}
+
+.service-area-copy h3 {
+    font-size: 2rem;
+}
+
+.service-area-map {
+    min-height: 320px;
+    height: 100%;
+    background: #fff;
+}
+
+.service-area-map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    border: 0;
+    display: block;
 }
 
 .office-map {

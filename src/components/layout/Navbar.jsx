@@ -105,7 +105,7 @@ export default function Navbar() {
             Contact
           </NavLink>
         </div>
-        <a className="btn btn-primary rounded-pill py-2 px-4 d-none d-lg-inline-flex" href={whatsappHref} target="_blank" rel="noreferrer">
+        <a className="btn btn-primary btn-nav-whatsapp rounded-pill py-2 px-4 d-none d-lg-inline-flex" href={whatsappHref} target="_blank" rel="noreferrer">
           <i className="fab fa-whatsapp me-2"></i>
           WhatsApp
         </a>
