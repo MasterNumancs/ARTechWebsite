@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
-export default function PageHeader({ title, current }) {
+export default function PageHeader({ title, current, branded = false }) {
   return (
-    <div className="container-fluid page-header py-5 mb-5">
+    <div className={`container-fluid page-header py-5 mb-5${branded ? ' is-brand' : ''}`}>
       <div className="container py-5">
         <h1 className="display-3 text-white mb-3 animated slideInDown">{title}</h1>
         <nav aria-label="breadcrumb animated slideInDown">

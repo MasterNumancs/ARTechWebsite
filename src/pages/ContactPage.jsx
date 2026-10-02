@@ -7,7 +7,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <PageHeader title="Contact" current="Contact" />
+      <PageHeader title="Contact" current="Contact" branded />
       <Contact />
     </>
   )

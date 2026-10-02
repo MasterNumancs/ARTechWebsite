@@ -56,7 +56,7 @@ export default function Products() {
                     }
                   }}
                 >
-                  <div className="product-card-media">
+                  <div className={`product-card-media${product.cover ? ' is-cover' : ''}`}>
                     <img src={product.image} alt={product.title} />
                   </div>
                   <div className="product-card-body">

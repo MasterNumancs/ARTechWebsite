@@ -65,7 +65,7 @@ export default function LiveChat() {
         <section className="live-chat-panel" aria-label="Live chat support">
           <header className="live-chat-header">
             <div className="live-chat-agent">
-              <img src="/img/logo-mark.jpg" alt="" />
+              <img src="/img/logo-mark.png" alt="" />
               <div>
                 <strong>{site.shortName} Support</strong>
                 <span>Online · general queries</span>

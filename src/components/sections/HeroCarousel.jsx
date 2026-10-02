@@ -18,13 +18,13 @@ export default function HeroCarousel() {
               <Link to="/quote" className="btn btn-primary rounded-pill py-md-3 px-md-5 me-3 animated slideInLeft">
                 Free Quote
               </Link>
-              <a href={whatsappHref} target="_blank" rel="noreferrer" className="btn btn-light rounded-pill py-md-3 px-md-5 animated slideInRight">
+              <a href={whatsappHref} target="_blank" rel="noreferrer" className="btn btn-light btn-whatsapp-us rounded-pill py-md-3 px-md-5 animated slideInRight">
                 WhatsApp Us
               </a>
             </div>
             <div className="col-lg-6">
               <div className="hero-visual">
-                <img src="/img/hero-products.jpg" alt={`${site.name} CCTV, networking, IP phones, and computers`} />
+                <img src="/img/hero-first.jpg" alt={`${site.name} CCTV cameras, recorder, network gear, and live view`} />
               </div>
             </div>
           </div>

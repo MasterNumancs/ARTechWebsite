@@ -1,14 +1,16 @@
 import usePageTitle from '../hooks/usePageTitle'
 import PageHeader from '../components/layout/PageHeader'
 import Services from '../components/sections/Services'
+import Testimonials from '../components/sections/Testimonials'
 
 export default function ServicePage() {
   usePageTitle('Services')
 
   return (
     <>
-      <PageHeader title="Services" current="Services" />
+      <PageHeader title="Services" current="Services" branded />
       <Services />
+      <Testimonials />
     </>
   )
 }

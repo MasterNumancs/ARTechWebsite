@@ -37,12 +37,12 @@ const topicReplies = [
   },
   {
     id: 'ceo',
-    keywords: ['ceo', 'owner', 'awais', 'rajput'],
-    answer: `${site.ceo.title} of ${site.name} is ${site.ceo.name}.`,
+    keywords: ['ceo', 'owner', 'director', 'awais', 'muhammad', 'umair', 'talib', 'rajput'],
+    answer: `${site.ceo.title} of ${site.name} is ${site.ceo.name}. ${site.director.title} is ${site.director.name}.`,
   },
   {
     id: 'cctv',
-    keywords: ['cctv', 'camera', 'cameras', 'nvr', 'dvr', 'surveillance', 'dahua', 'hikvision', 'uniview'],
+    keywords: ['cctv', 'camera', 'cameras', 'nvr', 'dvr', 'surveillance', 'dahua', 'hikvision', 'uniview', 'polo', 'imou', 'ezviz', 'analog', 'wireless'],
     answer: `Yes — we supply and install CCTV systems. Available brands for CCTV cameras: ${products.find((item) => item.id === 'cctv').brands.join(', ')}.`,
   },
   {
