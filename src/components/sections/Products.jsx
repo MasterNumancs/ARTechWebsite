@@ -1,9 +1,40 @@
 import { useEffect, useRef, useState } from 'react'
-import { products } from '../../data/products'
+import { useLocation } from 'react-router-dom'
+import { getProductById, products } from '../../data/products'
+
+function productIdFromHash(hash) {
+  const id = hash.replace('#', '')
+  return getProductById(id) ? id : null
+}
 
 export default function Products() {
-  const [openId, setOpenId] = useState(null)
+  const { hash } = useLocation()
+  const [openId, setOpenId] = useState(() => productIdFromHash(window.location.hash))
   const listRef = useRef(null)
+
+  useEffect(() => {
+    const id = productIdFromHash(hash)
+    if (!id) return undefined
+
+    setOpenId(id)
+    const frame = requestAnimationFrame(() => {
+      document.getElementById(`product-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    })
+
+    return () => cancelAnimationFrame(frame)
+  }, [hash])
+
+  useEffect(() => {
+    function handleFocusProduct() {
+      const id = productIdFromHash(window.location.hash)
+      if (!id) return
+      setOpenId(id)
+      document.getElementById(`product-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+
+    window.addEventListener('focus-product', handleFocusProduct)
+    return () => window.removeEventListener('focus-product', handleFocusProduct)
+  }, [])
 
   useEffect(() => {
     function handlePointerDown(event) {
@@ -42,7 +73,7 @@ export default function Products() {
           {products.map((product, index) => {
             const isOpen = openId === product.id
             return (
-              <div key={product.id} className="col-md-6 col-lg-3">
+              <div key={product.id} id={`product-${product.id}`} className="col-md-6 col-lg-3">
                 <article
                   className={`product-card h-100${isOpen ? ' is-open' : ''}`}
                   tabIndex={0}

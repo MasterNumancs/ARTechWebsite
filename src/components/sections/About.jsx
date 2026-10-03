@@ -3,7 +3,7 @@ import { aboutLead, aboutPromise, site } from '../../data/site'
 
 export default function About() {
   return (
-    <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+    <div id="about" className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
       <div className="container about px-lg-0">
         <div className="row g-0 mx-lg-0">
           <div className="col-lg-6 ps-lg-0" style={{ minHeight: 400 }}>
