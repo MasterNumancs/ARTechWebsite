@@ -577,6 +577,10 @@ body {
 }
 
 .team-item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center 18%;
     transition: .5s;
 }
 
@@ -683,6 +687,93 @@ body {
     border: 1px solid rgba(7, 20, 40, .08);
     box-shadow: 0 0 45px rgba(0, 0, 0, .06);
     height: 160px;
+}
+
+.reviews-section {
+    background: var(--light);
+}
+
+.reviews-kicker {
+    color: #e0a100;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.reviews-title {
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+}
+
+.review-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    color: #3c4043;
+    border: 1px solid rgba(7, 20, 40, .08);
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(7, 20, 40, .05), 0 8px 24px rgba(7, 20, 40, .05);
+    padding: 1.25rem 1.3rem 1.15rem;
+    text-align: left;
+}
+
+.review-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.review-name {
+    font-weight: 700;
+    color: #202124;
+    font-size: 15px;
+}
+
+.review-stars {
+    color: #fbbc04;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.review-card p {
+    color: #3c4043;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.reviews-toggle.btn-primary,
+.reviews-toggle.btn-primary:hover,
+.reviews-toggle.btn-primary:focus,
+.reviews-toggle.btn-primary:active,
+.reviews-toggle.btn-primary:focus:active {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: none;
+    transition: none;
+}
+
+@media (max-width: 991.98px) {
+    .reviews-title {
+        font-size: 2rem;
+    }
 }
 
 .client-logo img {
@@ -1053,6 +1144,35 @@ body {
     background: #0B4EA2;
     color: #fff;
     box-shadow: 0 12px 28px rgba(11, 78, 162, .35);
+}
+
+.live-chat-call {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+    .live-chat-call {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #0B4EA2;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 12px 28px rgba(11, 78, 162, .35);
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    .live-chat-call:hover,
+    .live-chat-call:focus {
+        color: #fff;
+    }
+
+    .live-chat.is-open .live-chat-call {
+        display: none;
+    }
 }
 
 .live-chat-panel {

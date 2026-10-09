@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { answerChat, chatQuickQuestions, chatWelcome, getQuickAnswer } from '../../data/chat'
-import { buildWhatsAppUrl, site } from '../../data/site'
+import { buildWhatsAppUrl, site, telHref } from '../../data/site'
 
 function createMessage(role, text) {
   return { id: `${role}-${Date.now()}-${Math.random().toString(16).slice(2)}`, role, text }
@@ -117,6 +117,9 @@ export default function LiveChat() {
         </section>
       ) : null}
 
+      <a className="live-chat-call" href={telHref} aria-label={`Call ${site.phoneDisplay}`}>
+        <i className="fa fa-phone-alt"></i>
+      </a>
       <button
         type="button"
         className="live-chat-toggle"
