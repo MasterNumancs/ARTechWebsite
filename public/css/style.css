@@ -689,7 +689,11 @@ body {
     height: 160px;
 }
 
-.reviews-section {
+.reviews-section.container-xxl {
+    width: 100%;
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
     background: var(--light);
 }
 
@@ -771,8 +775,78 @@ body {
 }
 
 @media (max-width: 991.98px) {
+    .container-xxl.py-5,
+    .service-area.py-5,
+    .about-text.py-5,
+    .feature-text.py-5,
+    .quote-text.py-5 {
+        padding-top: 1.75rem !important;
+        padding-bottom: 1.75rem !important;
+    }
+
+    #about.my-5,
+    .container-fluid.my-5 {
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    #about .about-text a.btn {
+        display: flex;
+        justify-content: center;
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service-item {
+        position: relative;
+    }
+
+    .service-item > .btn {
+        position: absolute;
+        top: calc(3rem + 13px);
+        right: 3rem;
+        margin: 0;
+    }
+
+    .service-item:hover > .btn,
+    .service-item > .btn:hover,
+    .service-item > .btn:focus {
+        width: 38px;
+    }
+
     .reviews-title {
         font-size: 2rem;
+    }
+
+    .reviews-section > .container {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .reviews-section .text-center {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .reviews-section .row {
+        --bs-gutter-x: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .reviews-section .col-12 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .review-card {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
     }
 }
 
