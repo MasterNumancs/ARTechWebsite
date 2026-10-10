@@ -93,7 +93,7 @@ export function useGlobalUiEffects() {
     $(window).on('scroll.templateUi', onScroll)
     $('.back-to-top').on('click.templateUi', function (e) {
       e.preventDefault()
-      $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo')
+      $('html, body').stop(true).animate({ scrollTop: 0 }, 50)
     })
 
     return () => {
@@ -101,6 +101,22 @@ export function useGlobalUiEffects() {
       $('.back-to-top').off('click.templateUi')
     }
   }, [])
+}
+
+/** Scroll to a section id after the route's scroll-to-top. */
+export function useHashScroll() {
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    const id = hash.replace('#', '')
+    if (!id) return undefined
+
+    const frame = requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+
+    return () => cancelAnimationFrame(frame)
+  }, [hash])
 }
 
 /** Re-init carousels / wow / isotope / counters after each route change */

@@ -13,9 +13,7 @@ export default function Team() {
             <div key={person.title} className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={`${0.1 + index * 0.2}s`}>
               <div className="team-item">
                 <div className="overflow-hidden position-relative">
-                  <div className="team-monogram" aria-hidden="true">
-                    {person.name.split(' ').filter(Boolean).slice(0, 2).map((part) => part[0]).join('')}
-                  </div>
+                  <img src={person.photo} alt={person.name} />
                   <div className="team-social">
                     <a className="btn btn-square btn-dark rounded-circle m-1" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="WhatsApp">
                       <i className="fab fa-whatsapp"></i>

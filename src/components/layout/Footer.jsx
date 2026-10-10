@@ -1,8 +1,32 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { products } from '../../data/products'
 import { mailHref, office, site, telHref, whatsappHref } from '../../data/site'
 
 export default function Footer({ className = 'mt-5' }) {
+  const { pathname, hash } = useLocation()
+
+  function focusProduct(event, id) {
+    if (pathname === '/products' && hash === `#${id}`) {
+      event.preventDefault()
+      window.dispatchEvent(new CustomEvent('focus-product'))
+    }
+  }
+
+  function focusSection(event, to) {
+    const [path, id] = to.split('#')
+    if (pathname === path && hash === `#${id}`) {
+      event.preventDefault()
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  const quickLinks = [
+    { label: 'About Us', to: '/about#about' },
+    { label: 'Our Services', to: '/service#service' },
+    { label: 'Free Quote', to: '/quote#quote' },
+    { label: 'Contact Us', to: '/contact#contact' },
+  ]
+
   return (
     <div className={`container-fluid bg-dark text-secondary footer ${className} py-5 wow fadeIn`} data-wow-delay="0.1s">
       <div className="container py-5">
@@ -38,15 +62,14 @@ export default function Footer({ className = 'mt-5' }) {
           <div className="col-lg-3 col-md-6">
             <h5 className="text-light mb-4">Products</h5>
             {products.map((product) => (
-              <Link key={product.id} className="btn btn-link" to="/products">{product.title}</Link>
+              <Link key={product.id} className="btn btn-link" to={`/products#${product.id}`} onClick={(event) => focusProduct(event, product.id)}>{product.title}</Link>
             ))}
           </div>
           <div className="col-lg-2 col-md-6">
             <h5 className="text-light mb-4">Quick Links</h5>
-            <Link className="btn btn-link" to="/about">About Us</Link>
-            <Link className="btn btn-link" to="/service">Our Services</Link>
-            <Link className="btn btn-link" to="/quote">Free Quote</Link>
-            <Link className="btn btn-link" to="/contact">Contact Us</Link>
+            {quickLinks.map((link) => (
+              <Link key={link.to} className="btn btn-link" to={link.to} onClick={(event) => focusSection(event, link.to)}>{link.label}</Link>
+            ))}
           </div>
           <div className="col-lg-3 col-md-6">
             <h5 className="text-light mb-4">Need a quote?</h5>

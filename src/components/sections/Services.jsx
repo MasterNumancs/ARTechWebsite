@@ -3,7 +3,7 @@ import { services } from '../../data/site'
 
 export default function Services() {
   return (
-    <div className="container-xxl py-5">
+    <div id="service" className="container-xxl py-5">
       <div className="container">
         <div className="text-center">
           <div className="bg-primary mb-3 mx-auto" style={{ width: 60, height: 2 }}></div>
