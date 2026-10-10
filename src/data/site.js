@@ -5,10 +5,12 @@ export const site = {
   ceo: {
     name: 'Muhammad Awais',
     title: 'CEO',
+    photo: '/img/leadership/awais.jpg',
   },
   director: {
     name: 'Umair Talib',
     title: 'Director',
+    photo: '/img/leadership/umair.jpg',
   },
   phone: '+923184018083',
   phoneDisplay: '+92 318 4018083',
@@ -90,6 +92,33 @@ export const clients = [
   { name: 'English Shoes', logo: '/img/clients/english-shoes.jpg' },
   { name: 'Stylo', logo: '/img/clients/stylo.jpg' },
   { name: 'A Alpha Group', logo: '/img/clients/alpha-group.jpg' },
+]
+
+export const reviews = [
+  {
+    name: 'Imran K.',
+    text: 'AR Tech Solution installed CCTV across our shop in Johar Town. The cameras were placed cleanly, recording was ready the same day, and they showed us how to check footage on a phone.',
+  },
+  {
+    name: 'Hina S.',
+    text: 'We needed a stable office network. Their team ran the cabling, set up the switches, and left every point labeled. Support answered the same day when we added more users.',
+  },
+  {
+    name: 'Bilal A.',
+    text: 'Our counter computers were slowing the shop down. AR Tech supplied business desktops, installed them, and moved our files without stopping the day’s work.',
+  },
+  {
+    name: 'Nadia R.',
+    text: 'The IP phone system they installed is clear and simple for the staff. They stayed until every extension worked and showed us how to add a new line later.',
+  },
+  {
+    name: 'Usman T.',
+    text: 'A camera went offline after a storm. The maintenance visit was quick, they repaired the connection, and the rest of the system stayed online the whole time.',
+  },
+  {
+    name: 'Farah M.',
+    text: 'They recommended the right cameras and network gear for our floor. Installation was neat, and they still pick up when we need a small change.',
+  },
 ]
 
 export const leadership = [site.ceo, site.director]

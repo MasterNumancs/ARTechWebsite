@@ -45,7 +45,7 @@ export default function Quote({ spaced = true }) {
   }
 
   return (
-    <div className={wrapperClass}>
+    <div id="quote" className={wrapperClass}>
       <div className="container quote px-lg-0">
         <div className="row g-0 mx-lg-0">
           <div className="col-lg-6 ps-lg-0" style={{ minHeight: 400 }}>

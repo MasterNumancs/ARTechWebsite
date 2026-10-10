@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom'
-import { useGlobalUiEffects, usePageEffects } from '../../hooks/useTemplateEffects'
+import { useGlobalUiEffects, useHashScroll, usePageEffects } from '../../hooks/useTemplateEffects'
 import Spinner from './Spinner'
 import Topbar from './Topbar'
 import Navbar from './Navbar'
@@ -11,6 +11,7 @@ import LiveChat from './LiveChat'
 export default function Layout() {
   useGlobalUiEffects()
   usePageEffects()
+  useHashScroll()
 
   return (
     <>
