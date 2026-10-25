@@ -1,4 +1,4 @@
-import { leadership, whatsappHref } from '../../data/site'
+import { leadership, leadershipHeading, whatsappHref } from '../../data/site'
 
 export default function Team() {
   return (
@@ -6,7 +6,7 @@ export default function Team() {
       <div className="container">
         <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
           <div className="bg-primary mb-3 mx-auto" style={{ width: 60, height: 2 }}></div>
-          <h1 className="display-5 mb-5">Leadership</h1>
+          <h2 className="display-5 mb-5">{leadershipHeading}</h2>
         </div>
         <div className="row g-4 justify-content-center">
           {leadership.map((person, index) => (

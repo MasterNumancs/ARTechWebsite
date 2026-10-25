@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { buildWhatsAppUrl, mailHref, office, site, telHref, whatsappHref } from '../../data/site'
+import { buildWhatsAppUrl, contactCopy, mailHref, office, site, telHref, whatsappHref } from '../../data/site'
 
 const emptyForm = {
   name: '',
@@ -71,11 +71,9 @@ export default function Contact() {
           <div className="col-lg-6 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
             <div className="p-lg-5 ps-lg-0">
               <div className="section-title text-start">
-                <h1 className="display-5 mb-4">Contact Us</h1>
+                <h2 className="display-5 mb-4">{contactCopy.heading}</h2>
               </div>
-              <p className="mb-4">
-                Call, email, or send a WhatsApp message. The form below opens a ready-to-send chat with {site.name}.
-              </p>
+              <p className="mb-4">{contactCopy.text}</p>
               <form onSubmit={handleSubmit}>
                 <div className="row g-3">
                   <div className="col-md-6">

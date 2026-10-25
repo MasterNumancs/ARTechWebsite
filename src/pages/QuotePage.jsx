@@ -3,12 +3,12 @@ import PageHeader from '../components/layout/PageHeader'
 import Quote from '../components/sections/Quote'
 
 export default function QuotePage() {
-  usePageTitle('Free Quote')
+  usePageTitle('quote')
 
   return (
     <>
-      <PageHeader title="Free Quote" current="Free Quote" branded />
-      <Quote spaced={false} />
+      <PageHeader title="Free Quote for CCTV, Networking & Computers" current="Free Quote" branded />
+      <Quote spaced={false} variant="page" />
     </>
   )
 }

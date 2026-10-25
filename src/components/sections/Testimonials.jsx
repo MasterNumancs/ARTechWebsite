@@ -1,4 +1,4 @@
-import { clients, site } from '../../data/site'
+import { clients, clientsHeading } from '../../data/site'
 
 export default function Testimonials() {
   return (
@@ -6,10 +6,7 @@ export default function Testimonials() {
       <div className="container">
         <div className="text-center">
           <div className="bg-primary mb-3 mx-auto" style={{ width: 60, height: 2 }}></div>
-          <h1 className="display-5 mb-3">Our Clients</h1>
-          <p className="mb-5">
-            Brands that already trust {site.name} for CCTV, networking, and on-site support.
-          </p>
+          <h2 className="display-5 mb-5">{clientsHeading}</h2>
         </div>
         <div className="row g-4 justify-content-center">
           {clients.map((client) => (

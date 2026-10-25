@@ -5,13 +5,13 @@ import About from '../components/sections/About'
 import Team from '../components/sections/Team'
 
 export default function AboutPage() {
-  usePageTitle('About')
+  usePageTitle('about')
 
   return (
     <>
-      <PageHeader title="About Us" current="About" branded />
+      <PageHeader title="About AR Tech Solution" current="About" branded />
       <Facts />
-      <About />
+      <About variant="about" />
       <Team />
     </>
   )

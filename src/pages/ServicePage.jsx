@@ -4,12 +4,12 @@ import Services from '../components/sections/Services'
 import Testimonials from '../components/sections/Testimonials'
 
 export default function ServicePage() {
-  usePageTitle('Services')
+  usePageTitle('service')
 
   return (
     <>
-      <PageHeader title="Services" current="Services" branded />
-      <Services />
+      <PageHeader title="CCTV Installation & Maintenance Services in Lahore" current="Services" branded />
+      <Services variant="page" />
       <Testimonials />
     </>
   )
