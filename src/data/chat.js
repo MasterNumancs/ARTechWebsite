@@ -37,7 +37,7 @@ const topicReplies = [
   },
   {
     id: 'ceo',
-    keywords: ['ceo', 'owner', 'director', 'awais', 'muhammad', 'umair', 'talib', 'rajput'],
+    keywords: ['ceo', 'owner', 'director', 'awais', 'muhammad', 'arslan', 'tariq', 'aslan', 'umair', 'talib', 'rajput'],
     answer: `${site.ceo.title} of ${site.name} is ${site.ceo.name}. ${site.director.title} is ${site.director.name}.`,
   },
   {

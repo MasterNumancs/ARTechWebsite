@@ -1,16 +1,18 @@
 import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { getProductById, products } from '../../data/products'
+import { productsHomeCopy, productsPageCopy } from '../../data/site'
 
 function productIdFromHash(hash) {
   const id = hash.replace('#', '')
   return getProductById(id) ? id : null
 }
 
-export default function Products() {
+export default function Products({ variant = 'home' }) {
   const { hash } = useLocation()
   const [openId, setOpenId] = useState(() => productIdFromHash(window.location.hash))
   const listRef = useRef(null)
+  const copy = variant === 'page' ? productsPageCopy : productsHomeCopy
 
   useEffect(() => {
     const id = productIdFromHash(hash)
@@ -64,14 +66,15 @@ export default function Products() {
       <div className="container">
         <div className="text-center">
           <div className="bg-primary mb-3 mx-auto" style={{ width: 60, height: 2 }}></div>
-          <h1 className="display-5 mb-3">Our Products</h1>
-          <p className="mb-5 mx-auto" style={{ maxWidth: 640 }}>
-            Hover or tap a product to see the brands we supply for it.
+          <h2 className="display-5 mb-3">{copy.heading}</h2>
+          <p className="mb-5 mx-auto" style={{ maxWidth: 720 }}>
+            {copy.intro}
           </p>
         </div>
         <div ref={listRef} className="row g-4">
           {products.map((product, index) => {
             const isOpen = openId === product.id
+            const summary = variant === 'page' && product.summaryPage ? product.summaryPage : product.summary
             return (
               <div key={product.id} id={`product-${product.id}`} className="col-md-6 col-lg-3">
                 <article
@@ -91,8 +94,8 @@ export default function Products() {
                     <img src={product.image} alt={product.title} />
                   </div>
                   <div className="product-card-body">
-                    <h4 className="mb-3">{product.title}</h4>
-                    <p className="mb-4">{product.summary}</p>
+                    <h3 className="h4 mb-3">{product.title}</h3>
+                    <p className="mb-4">{summary}</p>
                     <span className="product-hint">
                       <i className="fa fa-tags me-2" aria-hidden="true"></i>
                       View brands

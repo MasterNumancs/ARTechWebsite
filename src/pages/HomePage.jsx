@@ -12,20 +12,20 @@ import Quote from '../components/sections/Quote'
 import Team from '../components/sections/Team'
 
 export default function HomePage() {
-  usePageTitle()
+  usePageTitle('home')
 
   return (
     <>
       <HeroCarousel />
       <Facts />
-      <About />
-      <Products />
-      <Services />
+      <About variant="home" />
+      <Products variant="home" />
+      <Services variant="home" />
       <ServiceAreas />
       <Testimonials />
       <Reviews />
       <Features />
-      <Quote />
+      <Quote variant="home" />
       <Team />
     </>
   )

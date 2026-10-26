@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { products } from '../../data/products'
-import { mailHref, office, site, telHref, whatsappHref } from '../../data/site'
+import { mailHref, office, personTelHref, site, telHref, whatsappHref } from '../../data/site'
 
 export default function Footer({ className = 'mt-5' }) {
   const { pathname, hash } = useLocation()
@@ -34,10 +34,14 @@ export default function Footer({ className = 'mt-5' }) {
           <div className="col-lg-4 col-md-6">
             <h5 className="text-light mb-4">AR Tech Solution</h5>
             <p className="mb-2"><i className="fa fa-user-tie me-3"></i>{site.ceo.title} | {site.ceo.name}</p>
+            <p className="mb-2">
+              <i className="fa fa-phone-alt me-3"></i>
+              <a className="text-secondary" href={personTelHref(site.ceo)}>{site.ceo.phoneDisplay}</a>
+            </p>
             <p className="mb-2"><i className="fa fa-user-tie me-3"></i>{site.director.title} | {site.director.name}</p>
             <p className="mb-2">
               <i className="fa fa-phone-alt me-3"></i>
-              <a className="text-secondary" href={telHref}>{site.phoneDisplay}</a>
+              <a className="text-secondary" href={personTelHref(site.director)}>{site.director.phoneDisplay}</a>
             </p>
             <p className="mb-2">
               <i className="fa fa-envelope me-3"></i>

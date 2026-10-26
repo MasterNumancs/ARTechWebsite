@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
-import { aboutLead, aboutPromise, site } from '../../data/site'
+import { aboutHome, aboutPage, site } from '../../data/site'
 
-export default function About() {
+export default function About({ variant = 'home' }) {
+  const copy = variant === 'about' ? aboutPage : aboutHome
+
   return (
     <div id="about" className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
       <div className="container about px-lg-0">
@@ -19,9 +21,12 @@ export default function About() {
           <div className="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
             <div className="p-lg-5 pe-lg-0">
               <div className="bg-primary mb-3" style={{ width: 60, height: 2 }}></div>
-              <h1 className="display-5 mb-4">About Us</h1>
-              <p className="mb-3">{aboutLead}</p>
-              <p className="mb-4 pb-2">{aboutPromise}</p>
+              <h2 className="display-5 mb-4">{copy.heading}</h2>
+              {copy.paragraphs.map((paragraph, index) => (
+                <p key={paragraph.slice(0, 24)} className={index === copy.paragraphs.length - 1 ? 'mb-4 pb-2' : 'mb-3'}>
+                  {paragraph}
+                </p>
+              ))}
               <div className="row g-4 mb-4 pb-3">
                 <div className="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                   <div className="d-flex align-items-center">

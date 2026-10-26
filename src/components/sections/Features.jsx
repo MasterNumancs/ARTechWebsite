@@ -1,4 +1,4 @@
-import { reasons, site } from '../../data/site'
+import { reasons, whyChooseUs } from '../../data/site'
 
 export default function Features({ spaced = true }) {
   const wrapperClass = spaced
@@ -12,10 +12,8 @@ export default function Features({ spaced = true }) {
           <div className="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.5s">
             <div className="p-lg-5 ps-lg-0">
               <div className="bg-primary mb-3" style={{ width: 60, height: 2 }}></div>
-              <h1 className="display-5 mb-5">Why Choose Us</h1>
-              <p className="mb-4 pb-2">
-                {site.name} focuses on quality hardware, expert installation, reliable maintenance, and dedicated support for your business.
-              </p>
+              <h2 className="display-5 mb-5">{whyChooseUs.heading}</h2>
+              <p className="mb-4 pb-2">{whyChooseUs.text}</p>
               <div className="row g-4">
                 {reasons.map((item) => (
                   <div key={item.label} className="col-6">

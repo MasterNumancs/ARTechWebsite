@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { products } from '../../data/products'
-import { buildWhatsAppUrl, site } from '../../data/site'
+import { buildWhatsAppUrl, quoteCopy, site } from '../../data/site'
 
 const emptyForm = {
   name: '',
@@ -10,12 +10,14 @@ const emptyForm = {
   note: '',
 }
 
-export default function Quote({ spaced = true }) {
+export default function Quote({ spaced = true, variant = 'home' }) {
   const [form, setForm] = useState(emptyForm)
   const [error, setError] = useState('')
   const wrapperClass = spaced
     ? 'container-fluid bg-light overflow-hidden my-5 px-lg-0'
     : 'container-fluid bg-light overflow-hidden px-lg-0'
+  const heading = variant === 'page' ? quoteCopy.pageHeading : quoteCopy.homeHeading
+  const text = variant === 'page' ? quoteCopy.pageText : quoteCopy.homeText
 
   function updateField(event) {
     const { name, value } = event.target
@@ -61,10 +63,8 @@ export default function Quote({ spaced = true }) {
           <div className="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
             <div className="p-lg-5 pe-lg-0">
               <div className="bg-primary mb-3" style={{ width: 60, height: 2 }}></div>
-              <h1 className="display-5 mb-5">Free Quote</h1>
-              <p className="mb-4 pb-2">
-                Tell us the product you need. We will confirm available brands and send pricing on WhatsApp.
-              </p>
+              <h2 className="display-5 mb-5">{heading}</h2>
+              <p className="mb-4 pb-2">{text}</p>
               <form onSubmit={handleSubmit}>
                 <div className="row g-3">
                   <div className="col-12 col-sm-6">
@@ -122,7 +122,7 @@ export default function Quote({ spaced = true }) {
                       value={form.note}
                       onChange={updateField}
                       className="form-control border-0"
-                      placeholder="Preferred brand or special note"
+                      placeholder={quoteCopy.notePlaceholder}
                     ></textarea>
                   </div>
                   {error ? <div className="col-12 text-danger">{error}</div> : null}
