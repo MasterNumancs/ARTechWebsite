@@ -152,11 +152,12 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div className="office-map mt-0">
+        <div className="office-map">
           <iframe
-            title={`${site.name} office location`}
+            title={`${site.name} office location at ${office.address}`}
             src={office.embedUrl}
             loading="lazy"
+            allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>

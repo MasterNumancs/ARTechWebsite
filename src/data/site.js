@@ -1,3 +1,5 @@
+export const siteUrl = 'https://artechsolutionpk.com'
+
 export const site = {
   name: 'AR Tech Solution',
   shortName: 'AR Tech',
@@ -7,11 +9,15 @@ export const site = {
     name: 'Muhammad Awais',
     title: 'CEO',
     photo: '/img/leadership/awais.jpg',
+    phone: '+923184018083',
+    phoneDisplay: '+92 318 4018083',
   },
   director: {
-    name: 'Arslan',
+    name: 'Arslan Tariq',
     title: 'Director',
     photo: '/img/leadership/aslan.jpg',
+    phone: '+923234040074',
+    phoneDisplay: '+92 323 4040074',
   },
   phone: '+923184018083',
   phoneDisplay: '+92 318 4018083',
@@ -21,6 +27,15 @@ export const site = {
 export const telHref = `tel:${site.phone}`
 export const mailHref = `mailto:${site.email}`
 export const whatsappHref = `https://wa.me/${site.phone.replace('+', '')}`
+
+export function personTelHref(person) {
+  return `tel:${person.phone || site.phone}`
+}
+
+export function personWhatsAppHref(person) {
+  const phone = (person.phone || site.phone).replace('+', '')
+  return `https://wa.me/${phone}`
+}
 
 export const pageSeo = {
   home: {
@@ -220,12 +235,14 @@ export const leadershipHeading = 'Our Leadership Team'
 
 export const office = {
   address: 'Aljanat Mall, 2nd Floor, Jora Pull, Zarrar Shaheed Road, Lahore, 54810',
+  lat: 31.548404,
+  lng: 74.407983,
   mapsUrl:
-    'https://www.google.com/maps/search/?api=1&query=Aljanat+Mall,+Jora+Pull,+Zarrar+Shaheed+Road,+Lahore+54810',
+    'https://www.google.com/maps/search/?api=1&query=Al+Jannat+Mall,+Jora+Pull,+Zarrar+Shaheed+Road,+Lahore',
   embedUrl:
-    'https://maps.google.com/maps?q=Aljanat+Mall,+Jora+Pull,+Zarrar+Shaheed+Road,+Lahore+54810&z=16&output=embed',
+    'https://maps.google.com/maps?q=31.548404,74.407983&z=17&hl=en&output=embed',
   areaEmbedUrl:
-    'https://maps.google.com/maps?q=Lahore,+Pakistan&z=11&output=embed',
+    'https://maps.google.com/maps?q=31.548404,74.407983&z=15&hl=en&output=embed',
 }
 
 export const clients = [

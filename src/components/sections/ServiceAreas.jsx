@@ -20,9 +20,10 @@ export default function ServiceAreas() {
             <div className="col-lg-6">
               <div className="service-area-map">
                 <iframe
-                  title={`${site.name} service area in Lahore`}
+                  title={`${site.name} office location at ${office.address}`}
                   src={office.areaEmbedUrl}
                   loading="lazy"
+                  allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
