@@ -1051,23 +1051,29 @@ body {
 }
 
 .service-area-map {
-    min-height: 320px;
+    min-height: 360px;
     height: 100%;
-    background: #fff;
+    background: #e9eef5;
+    overflow: hidden;
 }
 
 .service-area-map iframe {
     width: 100%;
     height: 100%;
-    min-height: 320px;
+    min-height: 360px;
     border: 0;
     display: block;
 }
 
 .office-map {
     width: 100%;
-    height: 360px;
+    height: 420px;
+    margin-top: 1.5rem;
     background: #e9eef5;
+    border: 1px solid rgba(7, 20, 40, .08);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(7, 20, 40, .08);
 }
 
 .office-map iframe {
@@ -1075,6 +1081,18 @@ body {
     height: 100%;
     border: 0;
     display: block;
+}
+
+.team-call-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.team-call-card:hover,
+.team-call-card:focus {
+    color: inherit;
+    text-decoration: none;
 }
 
 .quote-visual,

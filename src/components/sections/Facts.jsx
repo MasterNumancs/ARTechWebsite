@@ -14,7 +14,7 @@ export default function Facts() {
                   </div>
                   <h1 className="display-1 mb-0 text-white-50">{fact.num}</h1>
                 </div>
-                <h5 className="text-white">{fact.title}</h5>
+                <h3 className="h5 text-white">{fact.title}</h3>
                 <hr className="w-25" />
                 <span>{fact.text}</span>
               </div>

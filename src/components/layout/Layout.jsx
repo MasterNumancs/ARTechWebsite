@@ -7,6 +7,7 @@ import Footer from './Footer'
 import Copyright from './Copyright'
 import BackToTop from './BackToTop'
 import LiveChat from './LiveChat'
+import Analytics from './Analytics'
 
 export default function Layout() {
   useGlobalUiEffects()
@@ -15,6 +16,7 @@ export default function Layout() {
 
   return (
     <>
+      <Analytics />
       <Spinner />
       <Topbar />
       <Navbar />

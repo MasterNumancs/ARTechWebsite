@@ -3,12 +3,12 @@ import PageHeader from '../components/layout/PageHeader'
 import Products from '../components/sections/Products'
 
 export default function ProductPage() {
-  usePageTitle('Products')
+  usePageTitle('products')
 
   return (
     <>
-      <PageHeader title="Products" current="Products" branded />
-      <Products />
+      <PageHeader title="CCTV Cameras, Networking & Computer Products in Lahore" current="Products" branded />
+      <Products variant="page" />
     </>
   )
 }
