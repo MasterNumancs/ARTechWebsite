@@ -3,11 +3,11 @@ import PageHeader from '../components/layout/PageHeader'
 import Features from '../components/sections/Features'
 
 export default function FeaturePage() {
-  usePageTitle('Why Choose Us')
+  usePageTitle('feature')
 
   return (
     <>
-      <PageHeader title="Why Choose Us" current="Why Choose Us" />
+      <PageHeader title="Why Choose AR Tech Solution in Lahore" current="Why Choose Us" />
       <Features spaced={false} />
     </>
   )

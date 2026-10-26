@@ -3,7 +3,7 @@ import PageHeader from '../components/layout/PageHeader'
 import NotFoundContent from '../components/sections/NotFoundContent'
 
 export default function NotFoundPage() {
-  usePageTitle('Page Not Found')
+  usePageTitle('notFound')
 
   return (
     <>

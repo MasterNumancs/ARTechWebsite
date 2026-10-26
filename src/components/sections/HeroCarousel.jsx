@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { site, whatsappHref } from '../../data/site'
+import { hero, site, whatsappHref } from '../../data/site'
 
 export default function HeroCarousel() {
   return (
@@ -9,11 +9,9 @@ export default function HeroCarousel() {
           <div className="row align-items-center g-5">
             <div className="col-lg-6 text-white">
               <p className="hero-kicker mb-3">{site.name}</p>
-              <h1 className="display-4 text-white animated slideInDown mb-4">
-                Professional CCTV, networking, and computer solutions
-              </h1>
+              <h1 className="display-4 text-white animated slideInDown mb-4">{hero.heading}</h1>
               <p className="fs-5 text-white mb-4 pb-2" style={{ maxWidth: 560 }}>
-                {site.tagline}
+                {hero.text}
               </p>
               <Link to="/quote" className="btn btn-primary rounded-pill py-md-3 px-md-5 me-3 animated slideInLeft">
                 Free Quote
